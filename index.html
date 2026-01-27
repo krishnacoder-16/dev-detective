@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GitHub Profile Detective</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <div class="header">
+        <h1 class="title">GitHub Profile Detective</h1>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+
+
+    <!-- Search -->
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="Search GitHub username" />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <p id="statusMessage" class="status"></p>
+
+    <!-- Profile Card -->
+    <div id="profileCard" class="card hidden">
+
+      <div class="user">
+        <img id="avatar" />
+        <div>
+          <h2 id="name"></h2>
+          <p id="username"></p>
+        </div>
+      </div>
+
+      <p id="bio" class="bio"></p>
+
+      <!-- Stats -->
+      <div class="stats">
+        <div>
+          <span>Repos</span>
+          <strong id="repos"></strong>
+        </div>
+        <div>
+          <span>Followers</span>
+          <strong id="followers"></strong>
+        </div>
+        <div>
+          <span>Following</span>
+          <strong id="following"></strong>
+        </div>
+      </div>
+
+      <p id="location" class="location"></p>
+
+      <a id="profileLink" target="_blank" class="btn">
+        View Profile
+      </a>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
