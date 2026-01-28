@@ -12,6 +12,8 @@ const followers = document.getElementById("followers");
 const following = document.getElementById("following");
 const locationEl = document.getElementById("location");
 const profileLink = document.getElementById("profileLink");
+const repoList = document.getElementById("repoList");
+
 
 
 searchInput.addEventListener("keydown", (e) => {
@@ -46,6 +48,7 @@ async function fetchUser(username) {
 
     locationEl.textContent = data.location || "Location not available";
     profileLink.href = data.html_url;
+    fetchRepos(data.repos_url);
 
     statusMessage.textContent = "";
     profileCard.classList.remove("hidden");
@@ -54,4 +57,38 @@ async function fetchUser(username) {
     statusMessage.textContent = "User not found 👀";
   }
 }
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+}
+async function fetchRepos(reposUrl) {
+  repoList.innerHTML = "";
+
+  const res = await fetch(reposUrl);
+  const repos = await res.json();
+
+  const latestRepos = repos
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    .slice(0, 5);
+
+  latestRepos.forEach((repo) => {
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+      <a href="${repo.html_url}" target="_blank">
+        ${repo.name}
+      </a>
+      <span class="repo-date">
+        ${formatDate(repo.created_at)}
+      </span>
+    `;
+
+    repoList.appendChild(li);
+  });
+}
+
 

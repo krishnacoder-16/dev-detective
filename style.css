@@ -155,3 +155,40 @@ body {
     transform: translateY(0);
   }
 }
+.repos {
+  margin-top: 20px;
+}
+
+.repos h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #e5e7eb;
+}
+
+.repos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.repos li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.repos a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.repos a:hover {
+  text-decoration: underline;
+}
+
+.repo-date {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
