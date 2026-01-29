@@ -188,6 +188,13 @@ battleBtn.addEventListener("click", () => {
     startBattle();
   }
 });
+[userAInput, userBInput].forEach((input) => {
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && currentMode === "battle") {
+      startBattle();
+    }
+  });
+});
 
 async function fetchUserForBattle(username) {
   const res = await fetch(`https://api.github.com/users/${username}`);
