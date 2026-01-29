@@ -191,4 +191,90 @@ body {
   color: #94a3b8;
   font-size: 12px;
 }
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Toggle */
+.battle-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.battle-toggle input {
+  display: none;
+}
+
+.slider {
+  width: 40px;
+  height: 20px;
+  background: #334155;
+  border-radius: 20px;
+  position: relative;
+}
+
+.slider::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s;
+}
+
+.battle-toggle input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+.label-text {
+  font-size: 14px;
+}
+
+/* Battle Search */
+.vs {
+  padding: 0 6px;
+  font-weight: bold;
+}
+
+/* Battle Area */
+.battle-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 30px;
+  align-items: start;
+}
+
+
+.battle-area.hidden {
+  display: none;
+}
+
+.battle-card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 14px;
+  background: rgba(2, 6, 23, 0.95);
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .battle-area {
+    flex-direction: column;   /* vertical stack */
+    align-items: center;
+    grid-template-columns: 1fr;
+  }
+
+  .battle-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
 

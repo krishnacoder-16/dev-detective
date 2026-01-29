@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>GitHub Profile Detective</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <div class="app">
-
-    <h1 class="title">GitHub Profile Detective</h1>
+    <div class="header">
+      <h1 class="title">GitHub Profile Detective</h1>
+      <!-- Battle Mode Toggle -->
+      <label class="battle-toggle">
+        <input type="checkbox" id="battleToggle" />
+        <span class="slider"></span>
+        <span class="label-text">Battle</span>
+      </label>
+    </div>
 
     <!-- Search -->
-    <div class="search-box">
+    <!-- NORMAL MODE SEARCH -->
+    <div id="normalSearch" class="search-box">
       <input id="searchInput" type="text" placeholder="Search GitHub username" />
       <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- BATTLE MODE SEARCH -->
+    <div id="battleSearch" class="search-box hidden">
+      <input id="userA" type="text" placeholder="Username A" />
+      <span class="vs">VS</span>
+      <input id="userB" type="text" placeholder="Username B" />
+      <button id="battleBtn">Compare</button>
     </div>
 
     <p id="statusMessage" class="status"></p>
@@ -30,7 +48,7 @@
           <p id="username"></p>
         </div>
       </div>
-      
+
       <div class="repos">
         <h3>Latest Repositories</h3>
         <ul id="repoList"></ul>
@@ -61,9 +79,26 @@
       </a>
 
     </div>
+    <div id="battleArea" class="battle-area hidden">
+      <div class="battle-card" id="cardA">
+        <img />
+        <h3>User A</h3>
+        <p class="followers">Followers: —</p>
+        <span class="badge hidden">Winner</span>
+      </div>
+
+      <div class="battle-card" id="cardB">
+        <img />
+        <h3>User B</h3>
+        <p class="followers">Followers: —</p>
+        <span class="badge hidden">Winner</span>
+      </div>
+
+    </div>
 
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>

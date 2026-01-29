@@ -13,7 +13,12 @@ const following = document.getElementById("following");
 const locationEl = document.getElementById("location");
 const profileLink = document.getElementById("profileLink");
 const repoList = document.getElementById("repoList");
+const battleToggle = document.getElementById("battleToggle");
 
+const normalSearch = document.getElementById("normalSearch");
+const battleSearch = document.getElementById("battleSearch");
+const battleArea = document.getElementById("battleArea");
+const battleBtn = document.getElementById("battleBtn");
 
 
 searchInput.addEventListener("keydown", (e) => {
@@ -90,5 +95,44 @@ async function fetchRepos(reposUrl) {
     repoList.appendChild(li);
   });
 }
+let currentMode = "normal";
+
+battleToggle.addEventListener("change", () => {
+  if (battleToggle.checked) {
+    switchToBattleMode();
+  } else {
+    switchToNormalMode();
+  }
+});
+
+function switchToBattleMode() {
+  currentMode = "battle";
+
+  normalSearch.classList.add("hidden");
+  profileCard.classList.add("hidden");
+
+  battleSearch.classList.remove("hidden");
+  battleArea.classList.remove("hidden");
+
+  statusMessage.textContent = "";
+}
+
+function switchToNormalMode() {
+  currentMode = "normal";
+
+  battleSearch.classList.add("hidden");
+  battleArea.classList.add("hidden");
+
+  normalSearch.classList.remove("hidden");
+  profileCard.classList.add("hidden");
+
+  statusMessage.textContent = "";
+}
+battleBtn.addEventListener("click", () => {
+  if (currentMode === "battle") {
+    // battle logic will come next
+    console.log("Battle started");
+  }
+});
 
 
