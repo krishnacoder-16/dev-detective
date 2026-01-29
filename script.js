@@ -20,6 +20,11 @@ const battleSearch = document.getElementById("battleSearch");
 const battleArea = document.getElementById("battleArea");
 const battleBtn = document.getElementById("battleBtn");
 
+const userAInput = document.getElementById("userA");
+const userBInput = document.getElementById("userB");
+
+const cardA = document.getElementById("cardA");
+const cardB = document.getElementById("cardB");
 
 searchInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") startSearch();
@@ -128,11 +133,91 @@ function switchToNormalMode() {
 
   statusMessage.textContent = "";
 }
+
+async function startBattle() {
+      const userA = userAInput.value.trim();
+      const userB = userBInput.value.trim();
+  if (!userA || !userB) {
+    statusMessage.textContent = "Please enter both usernames.";
+    return;
+  }
+  statusMessage.textContent = "Battling...";
+    console.log("Battle started");
+      try {
+    const [dataA, dataB] = await Promise.all([
+      fetchUserForBattle(userA),
+      fetchUserForBattle(userB),
+    ]);
+    updateBattleCard(cardA, dataA);
+    updateBattleCard(cardB, dataB);
+    clearBattleResult();
+
+    if (dataA.followers > dataB.followers) {
+      markWinner(cardA);
+      markLoser(cardB);
+    } else if (dataB.followers > dataA.followers) {
+      markWinner(cardB);
+      markLoser(cardA);
+    } else {
+      markDraw(cardA);
+      markDraw(cardB);
+    }
+
+    statusMessage.textContent = "";
+
+  } catch (error) {
+    statusMessage.textContent = "One or both users not found.";
+    clearBattleResult();
+  }
+}
+
+function updateBattleCard(card, data) {
+  const img = card.querySelector("img");
+  const nameEl = card.querySelector("h3");
+  const followersEl = card.querySelector(".followers");
+
+  img.src = data.avatar;
+  img.alt = data.username;
+
+  nameEl.textContent = data.name;
+  followersEl.textContent = `Followers: ${data.followers}`;
+}
+
 battleBtn.addEventListener("click", () => {
   if (currentMode === "battle") {
-    // battle logic will come next
-    console.log("Battle started");
+    startBattle();
   }
 });
+
+async function fetchUserForBattle(username) {
+  const res = await fetch(`https://api.github.com/users/${username}`);
+  if (!res.ok) throw new Error("User not found");
+
+  const data = await res.json();
+
+  return {
+    name: data.name || data.login,
+    username: data.login,
+    avatar: data.avatar_url,
+    followers: data.followers,
+  };
+}
+function clearBattleResult() {
+  [cardA, cardB].forEach((card) => {
+    card.classList.remove("winner", "loser", "draw");
+  });
+}
+
+function markWinner(card) {
+  card.classList.add("winner");
+}
+
+function markLoser(card) {
+  card.classList.add("loser");
+}
+
+function markDraw(card) {
+  card.classList.add("draw");
+}
 
 
