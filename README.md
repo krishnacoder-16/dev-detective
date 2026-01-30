@@ -8,13 +8,21 @@
 
 \### Normal Mode – Profile Search
 
-!\[Profile Search](assets/profile.png)
+
+
+!\\\[Profile Search](assets/profile.png)
+
+
+
+
 
 
 
 \### Battle Mode – Developer Comparison
 
-!\[Battle Mode](assets/battle.png)
+
+
+!\\\[Battle Mode](assets/battle.png)
 
 
 
@@ -184,7 +192,9 @@ dev-detective/
 
 
 
-🛠️ Technologies Used
+\\## 🛠️ Technologies Used
+
+
 
 
 
@@ -205,6 +215,18 @@ dev-detective/
 
 
 (No frameworks or external libraries used)
+
+
+
+
+
+
+
+---
+
+
+
+
 
 
 
@@ -232,6 +254,20 @@ dev-detective/
 
 
 
+
+
+
+
+---
+
+
+
+
+
+
+
+
+
 \\## 🤖 AI Assistance Disclaimer
 
 
@@ -256,11 +292,33 @@ AI tools were used \\\*\\\*only for guidance and explanations\\\*\\\*, such as:
 
 
 
+
+
+
+
 All code was written, adapted, and debugged manually after understanding the concepts.
 
 
 
+
+
+
+
 Detailed usage is documented in prompts.md.
+
+
+
+
+
+
+
+---
+
+
+
+
+
+
 
 
 
