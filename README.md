@@ -2,19 +2,13 @@
 
 
 
-\## 📸 Project Preview
+## 📸 Project Preview
 
+### Normal Mode – Profile Search
+![Profile Search](assets/profile.png)
 
-
-\### Normal Mode – Profile Search
-
-!\[Profile Search](assets/profile.png)
-
-
-
-\### Battle Mode – Developer Comparison
-
-!\[Battle Mode](assets/battle.png)
+### Battle Mode – Developer Comparison
+![Battle Mode](assets/battle.png)
 
 
 
