@@ -8,21 +8,13 @@
 
 \### Normal Mode – Profile Search
 
-
-
-!\\\[Profile Search](assets/profile.png)
-
-
-
-
+!\[Profile Search](assets/profile.png)
 
 
 
 \### Battle Mode – Developer Comparison
 
-
-
-!\\\[Battle Mode](assets/battle.png)
+!\[Battle Mode](assets/battle.png)
 
 
 
@@ -47,8 +39,6 @@ This project focuses on real-world frontend fundamentals such as \*\*API integra
 
 
 \### ✅ Level 1 – Core Functionality
-
-
 
 \- Search any GitHub user by username
 
@@ -80,15 +70,13 @@ This project focuses on real-world frontend fundamentals such as \*\*API integra
 
 \### ✅ Level 2 – Repository Insights
 
-
-
 \- Fetches repositories using `repos\_url`
 
 \- Displays \*\*top 5 latest repositories\*\*
 
 \- Repository names are clickable (open in new tab)
 
-\- Repository dates formatted into human-readable form  
+\- Repository dates formatted into human-readable format  
 
 &nbsp; \*(e.g. `25 Jan 2023`)\*
 
@@ -99,8 +87,6 @@ This project focuses on real-world frontend fundamentals such as \*\*API integra
 
 
 \### ✅ Level 3 – Advanced Battle Mode
-
-
 
 \- Toggle between \*\*Normal Mode\*\* and \*\*Battle Mode\*\*
 
@@ -142,15 +128,13 @@ This project focuses on real-world frontend fundamentals such as \*\*API integra
 
 \## 🧠 Key Design Decisions
 
+\- API calls handled using \*\*async/await\*\*
 
+\- Strict separation between Normal Mode and Battle Mode
 
-\- API calls are handled using \*\*async/await\*\*
+\- Parallel API fetching for better performance
 
-\- Battle Mode and Normal Mode are \*\*strictly separated\*\*
-
-\- Parallel API fetching used for better performance
-
-\- Compact UI used in Battle Mode to focus on comparison
+\- Compact UI in Battle Mode to focus on comparison
 
 \- Error states handled without breaking the UI
 
@@ -182,9 +166,9 @@ dev-detective/
 
 │   ├── profile.png
 
-│   └── battle.png
+│   ├── battle.png
 
-|    └── bg.png
+│   └── bg.png
 
 ├── README.md
 
@@ -192,31 +176,31 @@ dev-detective/
 
 
 
-\\## 🛠️ Technologies Used
+```
+
+
+
+---
 
 
 
 
 
-\\\* \\\*\\\*HTML5\\\*\\\*
+\## 🛠️ Technologies Used
 
 
 
-\\\* \\\*\\\*Modern CSS\\\*\\\* (CSS variables, responsive layout)
+\- \*\*HTML5\*\*
 
+\- \*\*Modern CSS\*\* (CSS variables, responsive layout)
 
+\- \*\*JavaScript (ES6+)\*\*
 
-\\\* \\\*\\\*JavaScript (ES6+)\\\*\\\*
-
-
-
-\\\* \\\*\\\*GitHub REST API\\\* \\\*
+\- \*\*GitHub REST API\*\*
 
 
 
 (No frameworks or external libraries used)
-
-
 
 
 
@@ -230,23 +214,17 @@ dev-detective/
 
 
 
-\\## 🧪 How to Run the Project
+\## 🧪 How to Run the Project
 
 
 
-1\\.Clone the repository
+1\. Clone the repository
 
+2\. Open `index.html` in a browser
 
+3\. Search a GitHub username in Normal Mode
 
-2\\.Open index.html in a browser
-
-
-
-3\\.Search a GitHub username in Normal Mode
-
-
-
-4\\.Switch to Battle Mode to compare two users
+4\. Switch to Battle Mode to compare two users
 
 
 
@@ -266,33 +244,21 @@ dev-detective/
 
 
 
-
-
-\\## 🤖 AI Assistance Disclaimer
-
-
-
-AI tools were used \\\*\\\*only for guidance and explanations\\\*\\\*, such as:
+\## 🤖 AI Assistance Disclaimer
 
 
 
-\\\*Understanding API flow and async behavior
+AI tools were used \*\*only for guidance and explanations\*\*, such as:
 
 
 
-\\\*Planning feature implementation
+\- Understanding API flow and async behavior
 
+\- Planning feature implementation
 
+\- Debugging logical and UI issues
 
-\\\*Debugging logical and UI issues
-
-
-
-\\\*Learning best practices for state management
-
-
-
-
+\- Learning best practices for state management
 
 
 
@@ -300,13 +266,7 @@ All code was written, adapted, and debugged manually after understanding the con
 
 
 
-
-
-
-
-Detailed usage is documented in prompts.md.
-
-
+Detailed usage is documented in `prompts.md`.
 
 
 
@@ -320,25 +280,13 @@ Detailed usage is documented in prompts.md.
 
 
 
+\## 👨‍💻 Author
 
 
 
+\*\*Krishna Kumar\*\*  
 
-\\## 👨‍💻 Author
-
-
-
-
-
-
-
-\\\*\\\*Krishna Kumar\\\*\\\*
-
-
-
-Intern – Prodesk IT
-
-
+Frontend Developer Intern – Prodesk IT  
 
 
 
